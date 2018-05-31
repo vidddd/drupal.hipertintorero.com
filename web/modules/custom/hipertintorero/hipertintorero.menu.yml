@@ -1,0 +1,5 @@
+loremipsum.form:
+  title: 'Hiper Tintorero'
+  description: 'Configure settings for the Hiper Tintorero module.'
+  route_name: hipertintorero.form
+  parent: 'system.admin_config_development'

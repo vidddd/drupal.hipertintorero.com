@@ -1,0 +1,6 @@
+name: Hiper Tintorero
+type: module
+description: 'Cosas de Hiper tintorero'
+package: Development
+core: 8.x
+configure: hipertintorero.form

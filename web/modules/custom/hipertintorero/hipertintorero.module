@@ -1,0 +1,15 @@
+<?php
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function hipertintorero_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.hipertintorero':
+      return t('
+        <h2>Hiper Tintorero for Drupal.</h2>
+      ');
+  }
+}

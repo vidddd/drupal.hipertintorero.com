@@ -1,0 +1,7 @@
+hipertintorero.form:
+  path: '/admin/config/hipertintorero'
+  defaults:
+    _form: 'Drupal\hipertintorero\Form\HipertintoreroForm'
+    _title: 'Hiper Tintorero settings'
+  requirements:
+    _permission: 'administer site configuration'
