@@ -1,0 +1,13 @@
+<?php
+function hipertintorero_preprocess_page(&$vars) {
+    if(isset($vars['node'])) {
+        $vars['title'] = $vars['node']->title->value;
+    }
+    else{
+       $vars['title'] =$vars['page']['#title'];
+    }
+ }
+/**
+ * @file
+ * Functions to support theming in the theme.
+ */

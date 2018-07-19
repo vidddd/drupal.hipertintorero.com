@@ -1,0 +1,81 @@
+{#
+/**
+ * @file
+ *BEGIN OUTPUT from 'modules/contrib/commerce/modules/product/templates/commerce-product.html.twig'
+ * Default product template.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper.
+ * - product: The rendered product fields.
+ *   Use 'product' to print them all, or print a subset such as
+ *   'product.title'. Use the following code to exclude the
+ *   printing of a given field:
+ *   @code
+ *   {{ product|without('title') }}
+ *   @endcode
+ * - product_entity: The product entity.
+ * - product_url: The product URL.
+ *
+ * @ingroup themeable
+ */
+#}
+{% set product_image = product.field_images %}
+{% set oneimage = product.field_images.0.entity.uri.value %}
+{% set alt_image = product.field_images.0.alt%}
+
+<article class="page-single-product">
+<div class="col-sm-6">
+  <div class="images-product">
+    <!--  <img class="attachment-shop-single" src="{{ file_url(product.field_images['#items'].entity.uri.value) }}" alt="">
+      <img class="img-thumbnail" src="{{ base_path }}themes/hipertintorero/images/products/product07.jpg" alt=""> -->
+      {{ dump(product.field_images) }}
+      {% if product_image.0.value  and product_image|length ==1%}
+      <a href="{{ file_url(oneimage) }}">
+          <img class="attachment-shop-single" src="{{ file_url(oneimage) }}" alt="{{alt_image}}">
+      </a>
+      {% elseif product_image.0.value and product_image|length >1 %}
+      <a href="{{ file_url(oneimage) }}">
+          <img class="attachment-shop-single" src="{{ file_url(oneimage) }}" alt="{{alt_image}}">
+      </a>
+      {% for img in product_image|slice(1,8) %}
+              <a href="{{ file_url(img.entity.uri.value)}}">
+                     <img class="img-thumbnail" src="{{ file_url(img.entity.uri.value)}}" alt="{{img.entity.alt}}">
+             </a>
+    {% endfor %}
+      {% endif %}
+  </div>
+</div>
+
+<div class="col-sm-6">
+  <h1 class="product-title">{{ product.title }}</h1>
+  <div class="price"><span class="amount">{{ product.variation_price }}</span></div>
+  <div class="price">
+      <span class="amount">{{content.price}}</span></span>
+  </div>
+
+  <div class="description">
+    {{ node.body.summary}}
+  </div>
+
+   {{content.add_to_cart}}
+
+
+  <div class="product-meta">
+    <span>category:
+      <a href="#">Saw</a>
+    </span>
+    <span>tags:
+      <a href="#">FatMax</a>, <a href="#">Handsaw</a>
+    </span>
+  </div>
+  <div class="product-share-buttons">
+    <span>share on:
+      <a href="#"><i class="fa fa-facebook"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+      <a href="#"><i class="fa fa-google-plus"></i></a>
+    </span>
+  </div>
+
+
+</div>
+</article>
