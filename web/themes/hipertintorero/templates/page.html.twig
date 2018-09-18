@@ -41,7 +41,6 @@
  *
  * @see template_preprocess_page()
  * @see html.html.twig
- *
  * @ingroup themeable
  */
 #}
@@ -56,12 +55,8 @@
           <a id="menu-button" href="#primary-menu-mobile">
             <i id="open-left" class="fa fa-bars"></i>
           </a>
-          <nav id="primary-menu-mobile">
-            <ul>
-              <li>
-                <a href="index.html">Home</a>
-              </li>
-            </ul>
+          <nav id="primary-menu-mobile" class="supermobile">
+              {{ mainmenu }}
           </nav>
         </div>
         <div class="col-xs-12 col-sm-9 col-lg-8 extra-info">
@@ -81,58 +76,20 @@
             </div>
           </div>
         </div>
-        <div class="col-xs-12 col-sm-3 col-lg-2 text-xs-center text-sm-right search-cart">
-          <div class="mini-cart">
-            <div class="mini-cart__button">
-              <i class="fa fa-shopping-cart mini-cart-icon" data-count="2"></i>
-            </div>
-            <div class="mini-cart__content">
-              <ul class="cart-list">
-                <li class="mini-cart-item">
-                  <a href="#" class="remove" title="Remove this item">x</a>
-                  <a href="shop-single-product.html">
-                    <img src="images/products/product03.jpg" alt="product03">
-                    Carpenter’s Pincers
-                  </a>
-                  <span class="quantity">1x
-                    <span class="amount">$14.00</span></span>
-                </li>
-                <li class="mini-cart-item">
-                  <a href="#" class="remove" title="Remove this item">x</a>
-                  <a href="shop-single-product.html">
-                    <img src="images/products/product04.jpg" alt="product04">
-                    3 piece Combination Wrench Set
-                  </a>
-                  <span class="quantity">1x
-                    <span class="amount">$20.00</span></span>
-                </li>
-              </ul>
-              <p class="total">
-                <strong>Subtotal:</strong>
-                <span class="amount">$34.00</span>
-              </p>
-              <p class="buttons">
-                <a href="shop-cart.html" class="btn">view cart</a>
-                <a href="shop-checkout.html" class="btn">checkout</a>
-              </p>
-            </div>
-          </div>
-          <!-- .mini-cart -->
+        <div class="col-xs-12 col-sm-3 col-lg-2 text-xs-center text-sm-right">
+          {{ page.header }}
         </div>
-        <!-- / .search-cart -->
       </div>
     </div>
   </header>
   <!-- /.site-header .style-01 -->
   {{ page.primary_menu }}
-  <!-- /.primary-menu -->
 
   <section class="big-title">
     <div class="container">
       <div class="row"><div class="col-xs-12"><h2>{{ title }}</h2></div></div>
     </div>
   </section>
-  <!-- /.big-title -->
 
   <div class="container">
     <div class="row">
@@ -141,7 +98,7 @@
         {{ page.content }}
       </div>
       <div class="col-sm-4 col-md-3">
-            {{ page.sidebar_second }}
+        {{ page.sidebar_second }}
         <!-- Search -->
         <!--
         <aside class="sidebar widget widget-search">
@@ -210,7 +167,7 @@
         -->
       </div>
       {% else %} {# pagina de producto sin sidebar #}
-          {{ page.content }}
+       <div class="col-xs-12">  {{ page.content }}</div>
       {% endif %}
     </div>
   </div>

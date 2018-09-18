@@ -35,9 +35,9 @@
       <ul{{ attributes }} class="menu">
     {% else %}
       <ul class="sub-menu">
-    {% endif %}º
+    {% endif %}
     {% for item in items %}
-      <li{{ item.attributes }} class="menu-item">
+      <li{{ item.attributes }} class="menu-item {% if item.below %}menu-item-has-childen{% endif %}">
         {{ link(item.title, item.url) }}
         {% if item.below %}
           {{ menus.menu_links(item.below, attributes, menu_level + 1) }}

@@ -19,6 +19,3 @@ libraries:
 
 libraries-override:
   system/base: false
-
-  # Remove an entire library.
-  #core/modernizr: false

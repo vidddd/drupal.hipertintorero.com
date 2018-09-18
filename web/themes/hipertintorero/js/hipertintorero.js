@@ -1,37 +1,15 @@
-$(document).ready(function() {
-  "use strict";
-
-  /*--------------------------------------------*/
-  /* ------------ Menu mobile: mmenu ---------- */
-  /*--------------------------------------------*/
+(function($){
+//  "use strict";
   $("#primary-menu-mobile").mmenu({
-    // Options
     extensions	: [ 'effect-slide-menu', 'pageshadow' ],
     counters	: true,
     navbar 		: {
       title		: 'Menu'
     },
-    navbars		: [
-      {
-        position	: 'top',
-        content		: [
-          '<a class="social-menu-mobile" href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>',
-          '<a class="social-menu-mobile" href="https://www.plus.google.com/"><i class="fa fa-google-plus"></i></a>',
-          '<a class="social-menu-mobile" href="https://www.twitter.com/"><i class="fa fa-twitter"></i></a>',
-          '<a class="social-menu-mobile" href="https://www.youtube.com/"><i class="fa fa-youtube-play"></i></a>'
-        ]
-      }, {
-        position	: 'top',
-        content		: [
-          'prev',
-          'title',
-          'close'
-        ]
-      }
-    ]
+    navbars		: [ ],
+    slidingSubmenus : false
   });
-  var API = $("#primary-menu-mobile").data( "mmenu" );
-
+  var API = $("#primary-menu-mobile").data("mmenu");
   $("#menu-button").on('click', function() {
     API.open();
   });
@@ -320,38 +298,6 @@ $(document).ready(function() {
   }
   */
 
-  /*-----------------------------------------*/
-  /* --------- Search box toggle ----------- */
-  /*-----------------------------------------*/
-  var submitIcon = $('.search-box-icon');
-  var inputBox = $('.search-field');
-  var searchBox = $('.search-form');
-  var isOpen = false;
-  submitIcon.on('click', function(){
-    if(isOpen == false){
-      searchBox.addClass('searchbox-open');
-      inputBox.focus();
-      isOpen = true;
-    } else {
-      searchBox.removeClass('searchbox-open');
-      inputBox.focusout();
-      isOpen = false;
-    }
-  });
-  submitIcon.on('mouseup', function(){
-    return false;
-  });
-  searchBox.on('mouseup', function(){
-    return false;
-  });
-  $(document).on('mouseup', function(){
-    if(isOpen == true){
-      submitIcon
-        .css('display','block')
-        .click();
-    }
-  });
-
   /*--------------------------------------------*/
   /* ---------------- Mini Cart ----------------*/
   /*--------------------------------------------*/
@@ -381,12 +327,6 @@ $(document).ready(function() {
     }
   });
 
-
-
-
-  /*--------------------------------------------*/
-  /* --------------- Scroll up ---------------- */
-  /*--------------------------------------------*/
   $.scrollUp({
     scrollName: 'scrollUp', // Element ID
     topDistance: '300', // Distance from top before showing element (px)
@@ -398,5 +338,4 @@ $(document).ready(function() {
     activeOverlay: false, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
   });
 
-
-});
+})(jQuery);

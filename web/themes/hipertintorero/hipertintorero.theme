@@ -1,4 +1,5 @@
 <?php
+
 function hipertintorero_preprocess_page(&$vars) {
     if(isset($vars['node'])) {
         $vars['title'] = $vars['node']->title->value;
@@ -6,8 +7,63 @@ function hipertintorero_preprocess_page(&$vars) {
     else{
        $vars['title'] =$vars['page']['#title'];
     }
+    $menu_name = "main"; // I think
+    $menu_tree = \Drupal::service('menu.link_tree');
+    $parameters = new \Drupal\Core\Menu\MenuTreeParameters();
+    $parameters->setMaxDepth(2)
+      ->onlyEnabledLinks()->excludeRoot();
+    $tree = $menu_tree->load($menu_name, $parameters);
+    $manipulators = array(
+        array('callable' => 'menu.default_tree_manipulators:checkAccess'),
+        array('callable' => 'menu.default_tree_manipulators:generateIndexAndSort'),
+      );
+      $tree = $menu_tree->transform($tree, $manipulators);
+      $vars['mainmenu'] = $menu_tree->build($tree);
+
+    /*  $block = \Drupal\block\Entity\Block::load('commerce_cart_block');
+        $block_content = \Drupal::entityTypeManager()
+          ->getViewBuilder('block')
+          ->view($block);
+       $variables['cartblock'] = $block_content;*/
+
  }
-/**
- * @file
- * Functions to support theming in the theme.
- */
+ function hipertintorero_preprocess_commerce_product(&$vars) {
+   /*$product = $vars['product'];
+   dump($product);*/
+}
+
+ function hipertintorero_preprocess_node(&$vars) {
+  //  kint($vars);
+ /*
+     if (isset($vars['node']->field_image) && !empty($vars['node']->field_image)) {
+
+            $fid = $vars['node']->field_image->getValue()[0]['target_id'];
+             $file = File::load($fid);
+             $image_uri = ImageStyle::load('image370x')->buildUrl($file->getFileUri());
+             $vars['img_uri_370_200'] = $image_uri;
+               $vars['img_uri_370_200']  = '';
+
+     } else {
+         $vars['img_uri_370_200'] = '';
+     }*/
+/*
+     $node = $vars['node'];
+               dump($node);
+
+    if (\Drupal::routeMatch()->getRouteName() == 'entity.taxonomy_term.canonical') {
+         $term_id = \Drupal::routeMatch()->getRawParameter('taxonomy_term');
+         $term = taxonomy_term_load($term_id);
+         //$term_name = $term_object->get('name')->value;
+         $vars['current_term'] = $term;
+        }
+
+     //get current term (tid)
+     if (\Drupal::routeMatch()->getRouteName() == 'entity.taxonomy_term.canonical') {
+         $term_id = \Drupal::routeMatch()->getRawParameter('taxonomy_term');
+         $term = taxonomy_term_load($term_id);
+         //$term_name = $term_object->get('name')->value;
+         $vars['current_term'] = $term;
+     }
+     $vars['current_term'] = '0000000000000000000000000000000000000000';
+     */
+ }
