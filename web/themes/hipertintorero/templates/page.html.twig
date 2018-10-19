@@ -48,7 +48,7 @@
   <header class="site-header style-01">
     <div class="container">
       <div class="row row-xs-center"><div class="col-xs-10 col-lg-2 site-branding">
-          <a href="{{ front_page }}"><img src="{{ base_path }}themes/hipertintorero/images/logo.png" alt="Renovation">
+          <a href="{{ front_page }}"><img src="{{ base_path }}themes/hipertintorero/images/logo.png" alt="Hiper Tintorero logotipo">
           </a>
         </div>
         <div class="col-xs-2 hidden-lg-up text-right">
@@ -82,14 +82,13 @@
       </div>
     </div>
   </header>
-  <!-- /.site-header .style-01 -->
   {{ page.primary_menu }}
 
-  <section class="big-title">
-    <div class="container">
-      <div class="row"><div class="col-xs-12"><h2>{{ title }}</h2></div></div>
-    </div>
-  </section>
+  {% if page.secondary_menu %}
+    <section class="slider-home">
+    {{ page.secondary_menu }}
+    </section>
+  {% endif %}
 
   <div class="container">
     <div class="row">
@@ -106,7 +105,7 @@
             <input type="search" class="search-field" placeholder="Search Products…" value="" name="s" title="Search for:">
           </form>
         </aside>
-
+         -->
         <!-- Best Sellers -->
         <!--
         <aside class="sidebar widget">
@@ -167,7 +166,9 @@
         -->
       </div>
       {% else %} {# pagina de producto sin sidebar #}
-       <div class="col-xs-12">  {{ page.content }}</div>
+
+       <div class="col-xs-12">
+       {{ page.content }}</div>
       {% endif %}
     </div>
   </div>
@@ -185,9 +186,9 @@
         </div>
         <div class="col-md-4">
           <div class="footer-infomation">
-            <h3 class="widget-tittle">infomation</h3>
+            <h3 class="widget-tittle">Informaci&oacute;n</h3>
             <ul class="menu-infomation">
-              <li><a href="#">Blog</a></li>
+              <li><a href="/blog">Blog</a></li>
               <li><a href="#">Contact</a></li>
               <li><a href="#">About Us</a></li>
               <li><a href="#">Shop</a></li>

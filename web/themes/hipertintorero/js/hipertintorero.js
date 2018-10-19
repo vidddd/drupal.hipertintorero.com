@@ -13,11 +13,27 @@
   $("#menu-button").on('click', function() {
     API.open();
   });
-
+  $(".owl-carousel").owlCarousel({
+    loop:true,
+    items: 4,
+    //margin:10,
+    nav:true,
+  /*  responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:5
+        }
+    }*/
+  });
   /*--------------------------------------------*/
   /* ----------------- Slider ----------------- */
   /*--------------------------------------------*/
-  /*
+
   var revapi1;
   if($("#rev_slider_1_1").revolution == undefined){
     revslider_showDoubleJqueryError("#rev_slider_1_1");
@@ -110,7 +126,7 @@
       }
     });
   }
-
+/*
   var revapi2;
   if($("#rev_slider_2_1").revolution == undefined){
     revslider_showDoubleJqueryError("#rev_slider_2_1");
@@ -296,7 +312,7 @@
       }
     });
   }
-  */
+*/
 
   /*--------------------------------------------*/
   /* ---------------- Mini Cart ----------------*/

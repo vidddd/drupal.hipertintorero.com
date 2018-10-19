@@ -35,13 +35,14 @@
   </div>
 </div>
 -->
-<div class="products grid-layout row"> 
+<div class="products grid-layout row">
+  <div class="owl-carousel">
 {% for row in rows %}
   {%
     set row_classes = [
       default_row_class ? 'views-row',
     ]
   %}
-    {{- row.content -}}
+    <div>{{- row.content -}}</div>
 {% endfor %}
-</div>
+</div></div>
