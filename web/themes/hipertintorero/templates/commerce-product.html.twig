@@ -39,33 +39,36 @@
   <hr>{{ product.variations }}
   <div class="product-meta">
     <span>categoria:
-      <a href="#">{{ product.field_category }}</a>
+      {{ product.field_category }}
     </span>
-    <span>tags:
-      <a href="#">FatMax</a>, <a href="#">Handsaw</a>
-    </span>
+    {% if product.filed_tags %}<span>tags:
+      {{ product.field_tags }}
+    </span>{% endif %}
   </div>
   <div class="product-share-buttons">
-    <span>share on:
-      <a href="{{ product_url }}"><i class="fa fa-facebook"></i></a>
-      <a href="{{ product_url }}"><i class="fa fa-twitter"></i></a>
-      <a href="{{ product_url }}"><i class="fa fa-google-plus"></i></a>
-    </span>
+      <div class="social">
+      <a title="Compartir en Facebook" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ product_url }}" target="_blank"><i class="fa fa-facebook"></i></a>
+      <a title="Compartir en twitter" class="twitter" href="https://twitter.com/home?status={{ product_url }}" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a title="Compartir en Google plus" class="gplus" href="https://plus.google.com/share?url={{ product_url }}" target="_blank"><i class="fa fa-google-plus"></i></a>
+      <a title="Compartir en pinterest" class="pinterest" href="https://pinterest.com/pin/create/button/?url={{ product_url }}" target="_blank"><i class="fa fa-pinterest"></i></a>
+       {# <a title="enviar por email" class="paper-plane" href="{{ product_url }}" target="_blank"><i class="fa fa-send"></i></a>  #}
+      <a title="Compartir en linkedin" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url={{ product_url }}" target="_blank"><i class="fa fa-linkedin"></i></a>
+    </div>
   </div>
   <div class="panel-group accordion-rn" id="accordion" role="tablist" aria-multiselectable="true">
-          <div class="panel">
-            <div class="panel-heading" role="tab" id="headingOne">
-              <h4 class="panel-title">
-                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="">
-                  Descripcion
-                </a>
-              </h4>
-            </div>
-            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne" aria-expanded="true" style="">
-              <div class="panel-body">
-                      {{ product.body }}
-              </div>
-            </div>
+      <div class="panel">
+        <div class="panel-heading" role="tab" id="headingOne">
+          <h4 class="panel-title">
+            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+              Descripcion
+            </a>
+          </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+          {{ product.body }}
           </div>
         </div>
+      </div>
+    </div>
 </article>

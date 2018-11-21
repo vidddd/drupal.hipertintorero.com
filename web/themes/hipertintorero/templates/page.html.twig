@@ -171,7 +171,18 @@
        {{ page.content }}</div>
       {% endif %}
     </div>
-  </div>
+   </div>
+   {% if page.sub_content %}
+      <section class="subcontent">
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12">
+                {{ page.sub_content }}
+              </div>
+            </div>
+      </div>
+    </section>
+    {% endif %}
   <footer class="footer">
     <div class="container">
       <div class="row">

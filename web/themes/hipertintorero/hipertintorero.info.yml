@@ -12,7 +12,8 @@ regions:
   sidebar_first: 'Sidebar First'
   sidebar_second: 'Sidebar Second'
   footer: 'Footer'
-  page_bottom: 'Page Bottom'
+  #page_bottom: 'Page Bottom'
+  sub_content: 'Sub Content'
 
 libraries:
   - 'hipertintorero/global-styling'

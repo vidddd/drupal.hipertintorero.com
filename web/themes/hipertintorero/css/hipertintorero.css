@@ -1889,20 +1889,13 @@ input[type="submit"], .service-item_img img, .service-item_icon, .service-item_i
 /*-----------------------------
 05-02. Collapse
 -----------------------------*/
-.accordion-rn .panel {
-  box-shadow: none;
-}
+.accordion-rn .panel {box-shadow: none;}
 
-.accordion-rn .panel-heading {
-  padding: 0;
-}
+.accordion-rn .panel-heading { padding: 0; }
 
 .accordion-rn .panel-heading .panel-title a {
-  background: #3969a1;
-  border: 2px solid #3969a1;
-  padding: 12px 25px 12px 15px;
-  display: block;
-  position: relative;
+  background: #3969a1;  border: 2px solid #3969a1;
+  padding: 12px 25px 12px 15px; display: block; position: relative;
 }
 
 .accordion-rn .panel-heading .panel-title a:hover, .accordion-rn .panel-heading .panel-title a:focus {
@@ -1910,22 +1903,13 @@ input[type="submit"], .service-item_img img, .service-item_icon, .service-item_i
 }
 
 .accordion-rn .panel-heading .panel-title a:after {
-  font-family: 'FontAwesome';
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  font-weight: 700;
-  content: "\f106";
-  position: absolute;
-  top: 12px;
-  right: 15px;
+  font-family: 'FontAwesome'; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1;
+  font-weight: 700; content: "\f106";
+  position: absolute; top: 12px; right: 15px;
 }
 
 .accordion-rn .panel-heading .panel-title .collapsed {
-  color: #111;
-  border-color: #eee;
+  color: #111;  border-color: #eee;
   background-color: transparent;
 }
 
@@ -5196,4 +5180,50 @@ div.messages ul {
 }
 div.messages ul li {
   list-style-image: none;
+}
+
+.social {
+    position: relative;
+    left: 0;
+    right: 0;
+    height: 46px;
+    color: #fff;
+    margin: 10px auto;
+    padding: 0;
+    list-style: none;
+}
+.social a {
+    font-size: 20px;
+    cursor: pointer;
+    width: 60px;
+    margin: 0;
+    padding: 8px 0;
+    text-align: center;
+    float: left;
+    height: 30px;
+    color:#fff;
+    position: relative;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.social a[class*=pinterest] {
+    background: #bd081c;
+}
+.social a[class*=twitter] {
+    background: #1da1f2;
+}
+.social a[class*=facebook] {
+    background: #3b5998;
+}
+.social a[class*=gplus] {
+    background: #e34429;
+}
+.social a[class*=linkedin] {
+    background: #0077B5;
+}
+.social a[class*=paper-plane] {
+    background: #42c5b0;
 }

@@ -7,7 +7,7 @@
       <div class="cart-block--contents__links">
         <p class="buttons">
           <a href="{{ path('commerce_cart.page') }}" class="btn">Ver el Carro</a>
-          <a href="" class="btn">Pagar</a>
+          <a href="{{ path('commerce_checkout.form', {'commerce_order': cartid}) }}" class="btn">Pagar</a>
         </p>
       </div>
   {% endif %}
